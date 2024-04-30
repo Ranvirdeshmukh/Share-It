@@ -37,7 +37,15 @@
       "no-extra-parens": 0,
       "no-restricted-syntax": [0, "DebuggerStatement"],
       "no-debugger": "warn",
-      "react/react-in-jsx-scope": "off" // Not needed for React 17+
+      "react/react-in-jsx-scope": "off", // Not needed for React 17+
+      "import/extensions": ["error", "ignorePackages", {
+        "js": "never",
+        "jsx": "never"
+      }],
+      "no-param-reassign": ["error", {
+        "props": true,
+        "ignorePropertyModificationsFor": ["draftState"]
+      }]
     },
     "plugins": [
       "react",

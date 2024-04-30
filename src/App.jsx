@@ -1,53 +1,30 @@
-import {
-  BrowserRouter, Routes, Route, NavLink,
-} from 'react-router-dom';
-
-import { createRoot } from 'react-dom/client';
 import React from 'react';
-
-function Nav() {
-  return (
-    <nav>
-      <ul>
-        <li><NavLink to="/">Home</NavLink></li>
-        <li><NavLink to="/about">About</NavLink></li>
-        <li><NavLink to="/test/id1">Test ID1</NavLink></li>
-        <li><NavLink to="/test/id2">Test ID2</NavLink></li>
-      </ul>
-    </nav>
-  );
-}
-
-function Welcome() {
-  return <div>Welcome</div>;
-}
-
-function About() {
-  return <div>All there is to know about me</div>;
-}
-function Test() {
-  return <div>Test</div>;
-}
-
-function FallBack() {
-  return <div>URL Not Found</div>;
-}
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import Counter from './components/Counter';
+import Controls from './components/Controls';
 
 function App() {
   return (
-    <BrowserRouter>
+    <Router>
       <div>
-        <Nav />
+        <h1>Welcome to My App</h1>
         <Routes>
-          <Route path="/" element={<Welcome />} />
+          <Route path="/" element={<Home />} />
           <Route path="/about" element={<About />} />
-          <Route path="/test/:id" element={<Test />} />
-          <Route path="*" element={<FallBack />} />
         </Routes>
+        <Counter />
+        <Controls />
       </div>
-    </BrowserRouter>
+    </Router>
   );
 }
 
-const root = createRoot(document.getElementById('main'));
-root.render(<App />);
+function Home() {
+  return <h2>Home</h2>;
+}
+
+function About() {
+  return <h2>About</h2>;
+}
+
+export default App;
