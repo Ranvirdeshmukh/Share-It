@@ -1,4 +1,4 @@
-# Title: Setting up the frontend SA2
+# Title: Recipe sharing website.
 Ranvir Deshmukh 
 
 *description*
