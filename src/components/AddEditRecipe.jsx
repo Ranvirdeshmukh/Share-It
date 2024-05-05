@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import useStore from '../store';
+import './AddEditRecipe.css'; // Make sure to create and import this CSS file
 
 function AddEditRecipe() {
   const { recipeId } = useParams();
@@ -28,68 +29,53 @@ function AddEditRecipe() {
   }, [recipe]);
 
   const handleChange = (e) => {
-    setFormState({
-      ...formState,
-      [e.target.name]: e.target.value,
-    });
+    setFormState({ ...formState, [e.target.name]: e.target.value });
   };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     const recipeData = {
-      ...formState,
-      tags: formState.tags.split(','),
+      title: formState.title,
+      content: formState.content,
+      coverUrl: formState.coverUrl,
+      tags: formState.tags.split(',').map((tag) => tag.trim()).join(','),
     };
 
-    if (recipeId) {
-      await updateRecipe(recipeId, recipeData);
-    } else {
-      await addRecipe(recipeData);
+    try {
+      if (recipeId) {
+        await updateRecipe(recipeId, recipeData);
+      } else {
+        await addRecipe(recipeData);
+      }
+      navigate('/');
+    } catch (error) {
+      console.error('Failed to submit recipe:', error);
     }
-    navigate('/');
   };
 
   return (
-    <form onSubmit={handleSubmit}>
-      <label htmlFor="title">Title</label>
-      <input
-        type="text"
-        id="title"
-        name="title"
-        value={formState.title}
-        onChange={handleChange}
-        required
-      />
-
-      <label htmlFor="content">Content</label>
-      <textarea
-        id="content"
-        name="content"
-        value={formState.content}
-        onChange={handleChange}
-        required
-      />
-
-      <label htmlFor="coverUrl">Cover URL</label>
-      <input
-        type="text"
-        id="coverUrl"
-        name="coverUrl"
-        value={formState.coverUrl}
-        onChange={handleChange}
-      />
-
-      <label htmlFor="tags">Tags (comma separated)</label>
-      <input
-        type="text"
-        id="tags"
-        name="tags"
-        value={formState.tags}
-        onChange={handleChange}
-      />
-
-      <button type="submit">{recipeId ? 'Update Recipe' : 'Add Recipe'}</button>
-    </form>
+    <div className="add-edit-recipe">
+      <h1>Create A New Post</h1>
+      <form onSubmit={handleSubmit} className="recipe-form">
+        <div className="form-group">
+          <label htmlFor="title">Title</label>
+          <input type="text" id="title" name="title" value={formState.title} onChange={handleChange} required />
+        </div>
+        <div className="form-group">
+          <label htmlFor="tags">Tags</label>
+          <input type="text" id="tags" name="tags" value={formState.tags} onChange={handleChange} />
+        </div>
+        <div className="form-group">
+          <label htmlFor="content">Content</label>
+          <textarea id="content" name="content" value={formState.content} onChange={handleChange} required />
+        </div>
+        <div className="form-group">
+          <label htmlFor="coverUrl">Cover Image URL</label>
+          <input type="text" id="coverUrl" name="coverUrl" value={formState.coverUrl} onChange={handleChange} />
+        </div>
+        <button type="submit">{recipeId ? 'Update Recipe' : 'Add Recipe'}</button>
+      </form>
+    </div>
   );
 }
 
