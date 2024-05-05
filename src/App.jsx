@@ -1,30 +1,23 @@
 import React from 'react';
-import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
-import Counter from './components/Counter';
-import Controls from './components/Controls';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import RecipeList from './components/RecipeList';
+import RecipeDetail from './components/RecipeDetail';
+import AddEditRecipe from './components/AddEditRecipe';
+import NavBar from './components/NavBar';
 
 function App() {
   return (
     <Router>
-      <div>
-        <h1>Welcome to My App</h1>
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/about" element={<About />} />
-        </Routes>
-        <Counter />
-        <Controls />
-      </div>
+      <NavBar />
+      <Routes>
+        <Route path="/" element={<RecipeList />} />
+        <Route path="/recipes/new" element={<AddEditRecipe />} />
+        <Route path="/recipes/:recipeId" element={<RecipeDetail />} />
+        <Route path="/recipes/edit/:recipeId" element={<AddEditRecipe />} />
+        <Route path="*" element={<div>404 Not Found</div>} />
+      </Routes>
     </Router>
   );
-}
-
-function Home() {
-  return <h2>Home</h2>;
-}
-
-function About() {
-  return <h2>About</h2>;
 }
 
 export default App;

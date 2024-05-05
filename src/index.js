@@ -1,6 +1,10 @@
+// .src/index.js
 /* eslint-disable eol-last */
 import $ from 'jquery';
 import './style.scss';
+import dotenv from 'dotenv';
+
+dotenv.config();
 
 // Initialize a counter variable
 let secondsPassed = 0;
