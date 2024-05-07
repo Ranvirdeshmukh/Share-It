@@ -44,7 +44,7 @@ function AddEditRecipe() {
       title,
       content,
       coverUrl,
-      tags: tags.split(',').map((tag) => tag.trim()),
+      tags: tags.split(',').map((tag) => tag.trim()).join(', '),
     };
 
     console.log('Submitting recipe:', recipeData); // Log the data being submitted
