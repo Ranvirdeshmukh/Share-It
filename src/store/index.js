@@ -1,4 +1,5 @@
 import axios from 'axios';
+// import { current } from 'immer';
 import create from 'zustand';
 
 // Define the base URL for the API
@@ -7,6 +8,7 @@ const apiBaseUrl = 'https://platform.cs52.me/api';
 // Create the store using Zustand
 const useStore = create((set) => ({
   recipes: [],
+  currentRecipe: {},
 
   // Fetch all recipes
   fetchRecipes: async () => {
@@ -15,6 +17,17 @@ const useStore = create((set) => ({
       set({ recipes: response.data });
     } catch (error) {
       console.error('Failed to fetch recipes:', error);
+      throw error; // Optional: re-throw to handle in UI components
+    }
+  },
+
+  // Fetch recipe
+  fetchRecipe: async (recipeId) => {
+    try {
+      const response = await axios.get(`${apiBaseUrl}/posts/${recipeId}?key=ranvir_deshmukh`);
+      set({ currentRecipe: response.data });
+    } catch (error) {
+      console.error('Failed to fetch recipe:', error);
       throw error; // Optional: re-throw to handle in UI components
     }
   },

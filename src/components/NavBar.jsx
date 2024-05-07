@@ -6,7 +6,9 @@ function NavBar() {
   return (
     <nav className="nav-bar">
       <div className="logo">
-        <img src="Chocolate minimalist master kitchen logo-2.png" alt="Logo" />
+        <NavLink to="/">
+          <img src="Chocolate minimalist master kitchen logo-2.png" alt="Logo" />
+        </NavLink>
       </div>
       <div className="nav-links">
         <NavLink to="/" style={({ isActive }) => ({ color: isActive ? 'red' : 'blue' })}>

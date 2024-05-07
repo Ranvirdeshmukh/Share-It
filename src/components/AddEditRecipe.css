@@ -1,32 +1,43 @@
 .add-edit-recipe {
-    max-width: 600px;
-    margin: auto;
-    background: #f4f4f4;
-    padding: 20px;
-    box-shadow: 0 0 10px rgba(0,0,0,0.1);
-  }
-  
-  .recipe-form .form-group {
-    margin-bottom: 15px;
-  }
-  
-  .recipe-form label {
-    display: block;
-    margin-bottom: 5px;
-  }
-  
-  .recipe-form input[type="text"],
-  .recipe-form textarea {
-    width: 100%;
-    padding: 10px;
-    border: 1px solid #ccc;
-  }
-  
-  .recipe-form button {
-    background-color: #007BFF;
-    color: white;
-    padding: 10px 20px;
-    border: none;
-    cursor: pointer;
-  }
-  
+  max-width: 600px;
+  margin: auto;
+  background: #f4f4f4;
+  padding: 20px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+.recipe-form .form-group {
+  margin-bottom: 15px;
+  background: white; /* Background color for the form group */
+  padding: 10px; /* Padding inside the form group */
+  box-shadow: 0 2px 5px rgba(0,0,0,0.2); /* Shadow around each form group */
+  border-radius: 5px; /* Optional: rounds the corners */
+}
+
+.recipe-form label {
+  display: block;
+  margin-bottom: 5px;
+}
+
+.recipe-form input[type="text"],
+.recipe-form textarea {
+  width: 100%;
+  padding: 15px; /* Increased padding for taller input boxes */
+  border: 1px solid #ccc;
+  font-size: 16px; /* Larger font size for better readability */
+  box-shadow: 0 1px 3px rgba(0,0,0,0.1); /* Subtle shadow inside the input box */
+  box-sizing: border-box; /* Adjusts box model to include padding and border in width/height */
+}
+
+.recipe-form button {
+  background-color: #007BFF;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s; /* Smooth transition for hover effect */
+}
+
+.recipe-form button:hover {
+  background-color: #0056b3; /* Darker blue when hovered */
+}
