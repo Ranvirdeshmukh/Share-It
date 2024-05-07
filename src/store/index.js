@@ -29,6 +29,7 @@ const useStore = create((set) => ({
       // Assuming response.data contains the full new recipe object, including its unique ID
       set((state) => ({
         recipes: [...state.recipes, response.data],
+
       }));
     } catch (error) {
       console.error('Failed to add recipe:', error.response ? error.response.data : error);
@@ -37,17 +38,22 @@ const useStore = create((set) => ({
   },
 
   // Update an existing recipe
+  // Update an existing recipe
   updateRecipe: async (id, updatedData) => {
     try {
-      const response = await axios.put(`${apiBaseUrl}/posts/${id}?key=ranvir_deshmukh`, updatedData, {
+    // Construct the URL with the recipe ID and API key
+      const updateUrl = `${apiBaseUrl}/posts/${id}?key=ranvir_deshmukh`;
+      const response = await axios.put(updateUrl, updatedData, {
         headers: {
-          'Content-Type': 'application/json',
+          'Content-Type': 'application/json', // Ensure the server treats this as JSON
         },
       });
-      set((state) => ({ recipes: state.recipes.map((r) => (r.id === id ? { ...r, ...updatedData } : r)) }));
-      return response; // Return response for further handling
+      set((state) => ({
+        recipes: state.recipes.map((r) => (r.id === id ? { ...r, ...updatedData } : r)),
+      }));
+      return response;
     } catch (error) {
-      console.error('Failed to update recipe:', error);
+      console.error('Failed to update recipe:', error); // Log any errors
       throw error;
     }
   },

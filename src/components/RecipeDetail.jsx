@@ -13,6 +13,10 @@ function RecipeDetail() {
     navigate('/');
   };
 
+  const handleEdit = () => {
+    navigate(`/recipes/edit/${recipeId}`); // Navigate to the edit page
+  };
+
   return (
     <div>
       {recipe ? (
@@ -20,7 +24,10 @@ function RecipeDetail() {
           <h1>{recipe.title}</h1>
           <img src={recipe.coverUrl} alt={recipe.title} />
           <p>{recipe.content}</p>
-          <button type="button" onClick={handleDelete}>Delete</button>
+          <div>
+            <button type="button" onClick={handleDelete}>Delete</button>
+            <button type="button" onClick={handleEdit}>Edit</button>
+          </div>
         </>
       ) : (
         <p>Recipe not found.</p>
