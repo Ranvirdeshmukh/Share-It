@@ -41,3 +41,14 @@
 .recipe-form button:hover {
   background-color: #0056b3; /* Darker blue when hovered */
 }
+
+.post-card {
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+  cursor: pointer;
+  overflow: hidden;
+  border: 2px solid #ccc; /* Default light grey border */
+}
+
+
