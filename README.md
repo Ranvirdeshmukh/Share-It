@@ -16,6 +16,7 @@ Everything worked well for me.
 - I have tailored this to a recipe platform, which qualifies as using the CRUD structure for a purpose other than a standard blog.
 - I have implemented a filter by tags functionality in the RecipeList, which counts for extra credit.
 - i have implemented input validation correctly in form submissions, this would count as extra credit.
+- if you click on the logo, you go to the  home button.
 
 ## Screenshots
 ![alt text](<screenshots/Screenshot 2024-05-08 at 12.44.56 AM.png>)
