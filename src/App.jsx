@@ -4,6 +4,7 @@ import RecipeList from './components/RecipeList';
 import RecipeDetail from './components/RecipeDetail';
 import AddEditRecipe from './components/AddEditRecipe';
 import NavBar from './components/NavBar';
+import './style.scss';
 
 function App() {
   return (

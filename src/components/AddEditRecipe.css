@@ -8,7 +8,7 @@
 
 .recipe-form .form-group {
   margin-bottom: 15px;
-  background: white; /* Background color for the form group */
+  background: #f4f4f4; /* Background color for the form group */
   padding: 10px; /* Padding inside the form group */
   box-shadow: 0 2px 5px rgba(0,0,0,0.2); /* Shadow around each form group */
   border-radius: 5px; /* Optional: rounds the corners */
@@ -23,9 +23,9 @@
 .recipe-form textarea {
   width: 100%;
   padding: 15px; /* Increased padding for taller input boxes */
-  border: 1px solid #ccc;
+  border: 1px solid #d8d7d7;
   font-size: 16px; /* Larger font size for better readability */
-  box-shadow: 0 1px 3px rgba(0,0,0,0.1); /* Subtle shadow inside the input box */
+  box-shadow: 0 1px 3px rgba(212, 211, 211, 0.1); /* Subtle shadow inside the input box */
   box-sizing: border-box; /* Adjusts box model to include padding and border in width/height */
 }
 

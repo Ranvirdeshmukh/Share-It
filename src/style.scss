@@ -1,4 +1,9 @@
 /* styles.css */
+
+body {
+  background-color: #f0e68c; // Khaki color
+}
+
 .posts-container {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
