@@ -1,3 +1,14 @@
+.search-bar {
+  width: 70%; /* Broader width */
+  height: 30px; /* Taller height */
+  margin: 20px auto; /* Centered horizontally with auto margins */
+  display: block; /* Ensures the input takes its own line */
+  padding: 5px 10px; /* Comfortable padding inside the input */
+  font-size: 16px; /* Larger font size for better readability */
+  border: 2px solid #ccc; /* Subtle border styling */
+  border-radius: 5px; /* Rounded corners */
+}
+
 .posts-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr); /* Adjust based on how many columns you want */
@@ -33,18 +44,4 @@
 
 .post-content h3, .post-content p {
   margin: 5px 0;
-}
-
-.edit-button {
-  padding: 8px 16px;
-  margin-top: 10px;
-  background-color: #4CAF50; /* Green */
-  color: white;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-}
-
-.edit-button:hover {
-  background-color: #323232; /* Dark grey for hover */
 }

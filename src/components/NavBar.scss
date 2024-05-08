@@ -3,7 +3,7 @@
   justify-content: space-between;
   align-items: center;
   padding: 10px 20px;
-  background-color: #f0e68c; /* Optional: adds a background color to the navbar */
+  background-color: #f0e68c; /* Adds a background color to the navbar */
 }
 
 .logo img {
@@ -13,17 +13,32 @@
 .nav-links a {
   margin-left: 20px;
   text-decoration: none;
-  color: blue; /* Default color for the links */
   padding: 10px 20px; /* Adds padding around the text to form a button-like shape */
-  border: 1px solid blue; /* Adds a border around the link */
+  border: 1px solid transparent; /* Starts with a transparent border */
   background-color: white; /* Background color of the button */
   border-radius: 5px; /* Rounds the corners of the button */
   box-shadow: 2px 2px 5px rgba(0,0,0,0.2); /* Adds a subtle shadow behind the button */
   transition: all 0.3s ease; /* Smooth transition for hover effects */
 }
 
-.nav-links a:hover {
-  color: darkblue; /* Color on hover */
-  background-color: #e0e0e0; /* Changes background on hover */
+.home-link {
+  color: rgb(0, 0, 139); /* Default color for the Home link */
+  border-color: rgb(11, 11, 149); /* Blue border for the Home link */
+}
+
+.home-link:hover {
+  color: white; /* White text on hover */
+  background-color: blue; /* Blue background on hover */
+  box-shadow: 2px 2px 8px rgba(0,0,0,0.3); /* Darker shadow on hover for a "lifted" effect */
+}
+
+.new-recipe-link {
+  color: rgb(152, 0, 0); /* Default color for the New Recipe link */
+  border-color: red; /* Red border for the New Recipe link */
+}
+
+.new-recipe-link:hover {
+  color: white; /* White text on hover */
+  background-color: rgb(193, 15, 15); /* Red background on hover */
   box-shadow: 2px 2px 8px rgba(0,0,0,0.3); /* Darker shadow on hover for a "lifted" effect */
 }

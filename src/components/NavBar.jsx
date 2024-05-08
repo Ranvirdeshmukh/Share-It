@@ -11,10 +11,10 @@ function NavBar() {
         </NavLink>
       </div>
       <div className="nav-links">
-        <NavLink to="/" style={({ isActive }) => ({ color: isActive ? 'red' : 'blue' })}>
+        <NavLink to="/" className="home-link" style={({ isActive }) => ({ color: isActive ? 'red' : 'blue' })}>
           Home
         </NavLink>
-        <NavLink to="/recipes/new" style={({ isActive }) => ({ color: isActive ? 'red' : 'blue' })}>
+        <NavLink to="/recipes/new" className="new-recipe-link" style={({ isActive }) => ({ color: isActive ? 'red' : 'blue' })}>
           New Recipe
         </NavLink>
       </div>

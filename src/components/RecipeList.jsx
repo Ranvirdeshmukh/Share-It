@@ -26,10 +26,10 @@ function RecipeList() {
     <div>
       <input
         type="text"
+        className="search-bar" // Use the new class for styling
         value={filter}
         onChange={handleFilterChange}
         placeholder="Filter by tags"
-        style={{ margin: '10px', padding: '5px' }}
       />
       <div className="posts-grid">
         {filteredRecipes.map((recipe) => (
