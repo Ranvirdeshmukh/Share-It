@@ -3,7 +3,7 @@ import axios from 'axios';
 import create from 'zustand';
 
 // Define the base URL for the API
-const apiBaseUrl = 'https://platform.cs52.me/api';
+const apiBaseUrl = 'http://localhost:9090/api';
 
 // Create the store using Zustand
 const useStore = create((set) => ({
