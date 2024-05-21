@@ -3,7 +3,7 @@ import axios from 'axios';
 import create from 'zustand';
 
 // Define the base URL for the API
-const apiBaseUrl = 'http://localhost:9090/api';
+const apiBaseUrl = 'https://platform-api-ranvirdeshmukh.onrender.com/api/';
 
 // Create the store using Zustand
 const useStore = create((set) => ({
